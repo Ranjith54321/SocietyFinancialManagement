@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <context:component-scan base-package="com.userlogin,com.database,com.session,com.user.process,com.admin.process"/> <!-- important****** -->   <!-- it is basically a beans.xml file -->
+        <context:annotation-config/>
+
+        
+        <bean id="viewresolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"></property><!-- WEB-INF/ -->
+        <property name="suffix" value=".jsp"></property>
+        </bean>
+        
+       <!--<bean id="info" class="com.database.DatabaseDao"> -->
+	   <!-- <bean id="stu" class="Student_data" init-method="init" destroy-method="destroy">  to avoid annotations you can use like this also -->
+	  <!--<property name="driver" value="com.mysql.jdbc.Driver"/>
+	   <property name="url" value="jdbc:mysql://localhost:3306/project"/>
+	   <property name="user_name" value="root"/>
+	   <property name="pass" value="toor"/>
+	   </bean> -->
+     </beans>
