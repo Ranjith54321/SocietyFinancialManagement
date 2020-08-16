@@ -30,7 +30,6 @@ public class UserController {
 	private String user_name;
 	@Value("${database.pass}")
 	private String pass; 
-	//static Connection con;
 
 	@RequestMapping("/checkuser")
 	public String checkuser(HttpServletRequest request,Model model) throws ClassNotFoundException, SQLException {
@@ -49,7 +48,7 @@ public class UserController {
 				if(name.equals(rs1.getString(1)) && passf.equals(rs1.getString(2))) {
 					model.addAttribute("name",name);
 					HttpSession session = request.getSession();
-					session.setAttribute("username", name+"bodysoda");
+					session.setAttribute("username", name);
 					return "admin";
 				}
 		}
@@ -64,7 +63,7 @@ public class UserController {
 				model.addAttribute("name",name);
 				model.addAttribute("Dno",rs.getString(1));
 				HttpSession session = request.getSession();
-				session.setAttribute("username", name+"bodysoda");
+				session.setAttribute("username", name);
 				
 				
 				return "user";

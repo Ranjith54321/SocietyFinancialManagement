@@ -51,8 +51,6 @@ public class UserPaymentDao {
 	public @ResponseBody String pay_request(HttpServletRequest request) throws SQLException {
 		int status=0;
 		
-		/*Statement st3 = (Statement) con.createStatement();
-		st3.executeQuery("truncate table temp");*/
 		
 		String query = "insert into temp values (?,?,?,?,?,?)";
 		
