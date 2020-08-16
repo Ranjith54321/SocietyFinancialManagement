@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +24,20 @@ import com.mysql.jdbc.PreparedStatement;
 
 @Controller
 public class UserDatabaseDao { 
-	private String driver = "com.mysql.jdbc.Driver"; // after completion of the project change replace this using properties file
+	/*private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
 	private String pass = "toor"; 
+	static Connection con;*/
+	
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
 	static Connection con;
 
 	@PostConstruct // it is called by the spring when you create your obj in the bean class first step after creating thr obj
@@ -127,7 +138,7 @@ public class UserDatabaseDao {
 	public static List<User> getAllRecords() throws SQLException{
 		List<User> list=new ArrayList<User>();
 		
-			PreparedStatement ps=(PreparedStatement) con.prepareStatement("select * from user");
+			PreparedStatement ps=(PreparedStatement) con.prepareStatement("select * from user order by D_no");
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
 				User u=new User();

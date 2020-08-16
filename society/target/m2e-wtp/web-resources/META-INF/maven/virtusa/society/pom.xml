@@ -21,7 +21,6 @@
 			<artifactId>quartz</artifactId>
 			<version>2.2.3</version>
 		</dependency>
-		
 
             <dependency>
                 <groupId>com.sun.mail</groupId>
@@ -165,9 +164,8 @@
 </dependency>
 
 
-
-
   </dependencies>
+  
   <build>
     <finalName>society</finalName>
   </build>

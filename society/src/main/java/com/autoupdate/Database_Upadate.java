@@ -44,7 +44,7 @@ public class Database_Upadate {
 			scheduler3.start();
 			scheduler3.scheduleJob(job3, trigger3); // UPDATE LATE FEE
 			
-			//Thread.sleep(10000);
+			Thread.sleep(1000);
 			scheduler1.shutdown();
 			scheduler2.shutdown();
 			scheduler3.shutdown();

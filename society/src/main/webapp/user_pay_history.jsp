@@ -7,10 +7,12 @@
 <title>user payment history</title>
 
 <style type="text/css">
-body {
-
- background-size: cover;
- background-attachment: fixed;
+    	body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#6abadeba;  
+    font-family: 'Arial';  
 }
 </style>
 </head>
@@ -19,13 +21,13 @@ body {
 		<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	
 	<%
-	out.println("user Payment History");
+	//out.println("user Payment History");
 	String D_no= (String)request.getAttribute("D_no");  
-	out.println("door number : "+D_no);
+	//out.println("door number : "+D_no);
 	List<Payment_history> list = UserProcess.getAllRecords_accepted_byid(D_no);
 	request.setAttribute("list", list);
 	%>  
-	<h1 align="center">Payment History</h1>  
+	<h1 align="center">Payment History ${D_no}</h1>  
 	<table border="1" width="90%" align="center">  
 	
 	<tr><th>Monthly Charge</th><th>Extra Charge</th><th>Fine</th><th>Paid Date</th></tr>  

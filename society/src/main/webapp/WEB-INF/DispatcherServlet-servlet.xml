@@ -10,7 +10,7 @@
         
         <context:component-scan base-package="com.userlogin,com.database,com.session,com.user.process,com.admin.process"/> <!-- important****** -->   <!-- it is basically a beans.xml file -->
         <context:annotation-config/>
-
+		<context:property-placeholder location="classpath:Databse-info.properties"/>  <!-- /society/src/main/java/ -->
         
         <bean id="viewresolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/"></property><!-- WEB-INF/ -->

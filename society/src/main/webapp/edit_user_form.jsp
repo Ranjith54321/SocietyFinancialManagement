@@ -50,10 +50,13 @@ jQuery(document).ready(function($) {
 
 </script>
 <style type="text/css">
-body {
- background-image: url("https://images.pexels.com/photos/518245/pexels-photo-518245.jpeg?cs=srgb&dl=pexels-photomix-company-518245.jpg&fm=jpg");
- background-size: cover;
- background-attachment: fixed;
+
+    	body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#6abadeba;  
+    font-family: 'Arial';  
 }
 </style>
 </head>
@@ -61,16 +64,16 @@ body {
 	<%@page import="com.database.UserDatabaseDao,com.database.User"%>
 	
 	<%
-	out.println("user edit form");
+	//out.println("user edit form");
 	String D_no= (String)request.getAttribute("D_no");  
-	out.println("door number : "+D_no);
+	//out.println("door number : "+D_no);
 	//User u=UserDatabaseDao.getRecordById(D_no); 
 	User u= (User)request.getAttribute("user_obj");
 	%>  
 	<h1 align="center">Edit Form</h1>  
-
+	<div>
 	<input type="hidden" name="D_no" value="<%=u.getDoor_num() %>" id="D_no"> 
- 	<table>
+ 	<table align="center">
 
 	
 	<tr><td>Enter the Family Head Name : </td>
@@ -89,6 +92,6 @@ body {
 	<td><input type="text" name="pass" value="<%= u.getPass()%>" id="pass"></td></tr>
 	<tr><td colspan="2"><input type="button" id="submit" value="Enter"> </td></tr>
 	</table>
-
+	</div>
 </body>
 </html>

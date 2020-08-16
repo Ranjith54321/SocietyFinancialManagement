@@ -12,6 +12,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,10 +25,20 @@ import com.mysql.jdbc.Statement;
 
 @Controller
 public class UserProcess {
-	private String driver = "com.mysql.jdbc.Driver"; 
+	/*private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
 	private String pass = "toor"; 
+	static Connection con;*/
+	
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
 	static Connection con;
 	
 	@PostConstruct 
@@ -159,21 +170,22 @@ public class UserProcess {
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()) {
 				Payment_history ph = new Payment_history();
-				ph.setMonth_charge(rs.getString(1));
-				ph.setExtra_charge(rs.getString(2));
-				ph.setFine(rs.getString(3));
-				ph.setPaid_date(rs.getString(4));
+				ph.setMonth_charge(rs.getString(2));
+				ph.setExtra_charge(rs.getString(3));
+				ph.setFine(rs.getString(4));
+				//System.out.println("date : paied =  "+rs.getString(6));
+				ph.setPaid_date(rs.getString(6));
 				list.add(ph);
 			}
 			// from main table
-			PreparedStatement ps2=(PreparedStatement) con.prepareStatement("select * from main where pay_stage='accepted' and D_no='D_no'");
+			PreparedStatement ps2=(PreparedStatement) con.prepareStatement("select * from main where pay_stage='accepted' and D_no='"+D_no+"'");
 			ResultSet rs2=ps2.executeQuery();
 			while(rs2.next()) {
 				Payment_history ph = new Payment_history();
-				ph.setMonth_charge(rs2.getString(1));
-				ph.setExtra_charge(rs2.getString(2));
-				ph.setFine(rs2.getString(3));
-				ph.setPaid_date(rs2.getString(4));
+				ph.setMonth_charge(rs2.getString(2));
+				ph.setExtra_charge(rs2.getString(3));
+				ph.setFine(rs2.getString(4));
+				ph.setPaid_date(rs2.getString(6));
 				list.add(ph);
 			}
 

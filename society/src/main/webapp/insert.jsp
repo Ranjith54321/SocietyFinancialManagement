@@ -48,15 +48,18 @@
 	});
 </script>
 <style type="text/css">
-body {
- background-image: url("https://images.pexels.com/photos/518245/pexels-photo-518245.jpeg?cs=srgb&dl=pexels-photomix-company-518245.jpg&fm=jpg");
- background-size: cover;
- background-attachment: fixed;
+    	body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#6abadeba;  
+    font-family: 'Arial';  
 }
 </style>
 
 </head>
 <body>
+	<div align="center">
  	 <form id="form"> <!-- action="adduser_meth" method="post"-->
  	<table>
 	<tr><td>Enter the Door Number : </td>
@@ -79,6 +82,6 @@ body {
 	</table>
 	</form>  
 	
-	
+	</div>
 </body>
 </html>

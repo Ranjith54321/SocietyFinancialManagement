@@ -10,6 +10,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,11 +21,20 @@ import com.mysql.jdbc.Statement;
 
 @Controller
 public class UserPaymentDao {
-	private String driver = "com.mysql.jdbc.Driver"; 
-	//private String db_name = "project";
+	/*private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
 	private String pass = "toor"; 
+	static Connection con;*/
+	
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
 	static Connection con;
 	
 	@PostConstruct 

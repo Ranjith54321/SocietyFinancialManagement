@@ -29,9 +29,12 @@
 
 </script>
 <style type="text/css">
-body {
- background-size: cover;
- background-attachment: fixed;
+    	body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#6abadeba;  
+    font-family: 'Arial';  
 }
 </style>
 </head>

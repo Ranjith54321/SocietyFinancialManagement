@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,15 +17,20 @@ import com.mysql.jdbc.Statement;
 
 @Controller
 public class UserController {
-	/*public DatabaseDao getdb() {
-	ApplicationContext con = new ClassPathXmlApplicationContext("DispatcherServlet-servlet.xml");
-	DatabaseDao db = con.getBean("info",DatabaseDao.class);
-	return db;
-	}*/
-	private String driver = "com.mysql.jdbc.Driver"; 
+	/*private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
-	private String pass = "toor";
+	private String pass = "toor";*/
+	
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
+	//static Connection con;
 
 	@RequestMapping("/checkuser")
 	public String checkuser(HttpServletRequest request,Model model) throws ClassNotFoundException, SQLException {
@@ -66,7 +72,7 @@ public class UserController {
 
 		}
 		
-		return "wrong";// here write code:  redirect to index.jsp  
+		return "wrong";
 	}	
 	
 }
