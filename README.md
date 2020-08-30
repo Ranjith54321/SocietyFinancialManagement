@@ -35,4 +35,6 @@ Society-Financial-Management (e-society)
     -Report generation -Tracking of payment activities
     
   
-  note : the sender mail shoud be
+  note : the sender mail shoud be 
+  
+  Enable signin from less secure apps in Gmail: by click this [link](https://myaccount.google.com/security)
