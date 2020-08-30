@@ -53,8 +53,8 @@ public class Daymail implements Job {
 	  @Value("${mail.pass}")
 	  private String password;*/
 	
-	  private String from = "17euit125@skcet.ac.in"; 
-	  private String password = "8300662861";
+	  private String from = "your mail"; 
+	  private String password = "your pass";
 	
 	public void startconnection() throws ClassNotFoundException, SQLException {
 		//System.out.println("connected to DB successfully");
