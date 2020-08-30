@@ -8,8 +8,20 @@ import org.quartz.SchedulerException;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.impl.StdSchedulerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class Database_Upadate {
+	
+	@Value("${database.driver}")
+	private static String driver; 
+	@Value("${database.url}")
+	private static String url;
+	@Value("${database.user_name}")
+	private static String user_name;
+	@Value("${database.pass}")
+	private static String pass;
 	public static void schedule()
 	{
 		try {
@@ -24,7 +36,7 @@ public class Database_Upadate {
 			scheduler1.start();
 			scheduler1.scheduleJob(job1, trigger1); // MONTHTOYEAR and COPY
 			
-			JobDetail job2=JobBuilder.newJob(Temp.class)
+			JobDetail job2=JobBuilder.newJob(Daymail.class)
 					.withIdentity("job2", "group2").build();
 			Trigger trigger2=TriggerBuilder.newTrigger()
 					.withIdentity("cronTrigger2", "group2")
@@ -49,15 +61,20 @@ public class Database_Upadate {
 			scheduler2.shutdown();
 			scheduler3.shutdown();
 
-			
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 	}
+	public static void check() {
+		System.out.println("Driver "+driver);
+		  System.out.println("url "+url);
+		  System.out.println("user_name "+user_name);
+		  System.out.println("pass "+pass);
+	}
 	public static void main(String[] args) throws SchedulerException {
-		//schedule();
+		//check();
 	}
 
 }

@@ -18,21 +18,43 @@ import javax.mail.internet.MimeMessage;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
-public class Temp implements Job {
+public class Daymail implements Job {
 
 	private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
 	private String pass = "toor"; 
 	static Connection con;
+	
+	/*
+	
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
+	static Connection con;*/
+	
 	static String D_no;  //D_no | month_charge | extra_charge | fine | pay_stage | paid_date
 	static String month_charge;
 	static String extra_charge;
 	static String fine;
+	
+	 /* @Value("${mail.from}")
+	  private String from; 
+	  @Value("${mail.pass}")
+	  private String password;*/
+	
+	  private String from = "17euit125@skcet.ac.in"; 
+	  private String password = "8300662861";
 	
 	public void startconnection() throws ClassNotFoundException, SQLException {
 		//System.out.println("connected to DB successfully");
@@ -75,8 +97,8 @@ public class Temp implements Job {
 		}	
 	}
 	public void prepare_mail() throws SQLException {
-		  final String from = "17euit125@skcet.ac.in"; 
-		  final String password = "8300662861";  
+		  //final String from;
+		  //final String password; 
 
 		 // System.out.println("from mail");
 		  
@@ -118,7 +140,7 @@ public class Temp implements Job {
 				}
 				String to = rs3.getString("email");
 				
-				//String to = "sranjith54321@gmail.com";
+
 				
 				//System.out.println("to  "+to);
 				

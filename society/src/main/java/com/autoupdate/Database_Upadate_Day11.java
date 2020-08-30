@@ -7,17 +7,30 @@ import java.sql.SQLException;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 public class Database_Upadate_Day11 implements Job{
+
+	
 	private String driver = "com.mysql.jdbc.Driver"; 
 	private String url = "jdbc:mysql://localhost:3306/project";
 	private String user_name = "root";
 	private String pass = "toor"; 
 	static Connection con;
+	/*
+	@Value("${database.driver}")
+	private String driver; 
+	@Value("${database.url}")
+	private String url;
+	@Value("${database.user_name}")
+	private String user_name;
+	@Value("${database.pass}")
+	private String pass; 
+	static Connection con;*/
 	
 	public void startconnection() throws ClassNotFoundException, SQLException {
 		//System.out.println("connected to DB successfully");

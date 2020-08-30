@@ -8,7 +8,7 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
         
-        <context:component-scan base-package="com.userlogin,com.database,com.session,com.user.process,com.admin.process"/> <!-- important****** -->   <!-- it is basically a beans.xml file -->
+        <context:component-scan base-package="com.userlogin,com.database,com.session,com.user.process,com.admin.process,com.autoupdate"/> <!-- important****** -->   <!-- it is basically a beans.xml file -->
         <context:annotation-config/>
 		<context:property-placeholder location="classpath:Databse-info.properties"/>  <!-- /society/src/main/java/ -->
         

@@ -17,10 +17,7 @@ import com.mysql.jdbc.Statement;
 
 @Controller
 public class UserController {
-	/*private String driver = "com.mysql.jdbc.Driver"; 
-	private String url = "jdbc:mysql://localhost:3306/project";
-	private String user_name = "root";
-	private String pass = "toor";*/
+
 	
 	@Value("${database.driver}")
 	private String driver; 

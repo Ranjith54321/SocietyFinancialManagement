@@ -25,11 +25,6 @@ import com.mysql.jdbc.Statement;
 
 @Controller
 public class UserProcess {
-	/*private String driver = "com.mysql.jdbc.Driver"; 
-	private String url = "jdbc:mysql://localhost:3306/project";
-	private String user_name = "root";
-	private String pass = "toor"; 
-	static Connection con;*/
 	
 	@Value("${database.driver}")
 	private String driver; 
@@ -120,7 +115,7 @@ public class UserProcess {
 	
 	
 	@RequestMapping("/accept_pay")
-	public @ResponseBody String pay_charge(HttpServletRequest request) throws SQLException {
+	public @ResponseBody String pay_charge(HttpServletRequest request) throws SQLException, ClassNotFoundException {
 		int status=0;
 		String D_no = request.getParameter("D_no");
 	    
@@ -132,6 +127,10 @@ public class UserProcess {
 
 	    //System.out.println("curr_date : "+curr_date);
 	    
+	    
+		
+		//new AcceptMail().prepare_mail(D_no);
+		
 		String query = "update temp set pay_stage='accepted' , paid_date='"+curr_date+"' where D_no='"+D_no+"'"; //accepted
 		PreparedStatement st = (PreparedStatement) con.prepareStatement(query);
 		status=st.executeUpdate();
