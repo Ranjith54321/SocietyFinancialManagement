@@ -10,7 +10,7 @@
 
  ## Application Specification :
 
-   ### Appartment Manager:
+   ### -> Appartment Manager:
 		
 		- Can able to login
 		- Can able to Manage the Appartment Family :
@@ -26,7 +26,7 @@
 		- Can able to see all the payment reports based on gien date range
 
 
-   ### Family Member :
+   ### -> Family Member :
 
 		- Can able to login after creating an account with the help of Appartment Manager
 
@@ -34,7 +34,7 @@
 
 		- Can able to see the payment history of that user
 
-   ### Automatic functionalities :
+   ## Automatic functionalities :
 
 		1.) Every month day 6 to day 10 the payment alert mail will send to each user until he/she pay the bill
 
@@ -43,14 +43,14 @@
 		3.) The payment delayed user deatails also automatically recorded
 
 
-## Technology Stack Used:
-
-		     FrameWork -> Spring MVC 
-      		     Front-End -> JSP,JSTL,HTML,CSS,JavaScript(JQuery,AJAX).
-      		     Back-End  -> Java (Programming Language)
-      		     DataBase  -> MySql
-		     Automatic-Functionalites -> QuartsScheduler
-                     Project-Management-Tool -> Maven
+   ## Technology Stack Used:
+   
+			     FrameWork -> Spring MVC 
+			     Front-End -> JSP,JSTL,HTML,CSS,JavaScript(JQuery,AJAX).
+			     Back-End  -> Java (Programming Language)
+			     DataBase  -> MySql
+			     Automatic-Functionalites -> QuartsScheduler
+			     Project-Management-Tool -> Maven
 
 
 		
