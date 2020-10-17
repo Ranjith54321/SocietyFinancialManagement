@@ -110,29 +110,32 @@
 
  ## Application Modules:
  
-   -UserLogin 
-   
-   -Adminwork 
-   
-   -userwork
-   
-   -Autoupdate 
-   
-   -database
-   
-   -session
+	   -UserLogin 
+
+	   -Adminwork 
+
+	   -userwork
+
+	   -Autoupdate 
+
+	   -database
+
+	   -session
 
 
 ## Auromatic Functionality Libaries :
 
-For mail we have JavaMail API in this application you no need to import any jar file because I create this app using Maven so it hande package for us
+	- For mail we have JavaMail API in this application you no need to import any jar file,
+		because I create this app using Maven so it hande package for us
 
-For Automatic Fucntionality Quartz Scheduler is used [crons](https://www.freeformatter.com/cron-expression-generator-quartz.html) as a input argument 
+	- For Automatic Fucntionality Quartz Scheduler is used crons as a input argument 
+	
+[For more about crons](https://www.freeformatter.com/cron-expression-generator-quartz.html)
 
 
-  note : the sender mail shoud be 
+  #### Note : 
   
-  Enable signin from less secure apps in Gmail: by click this [link](https://myaccount.google.com/security)
+   The sender mail shoud be Enable signin from less secure apps in Gmail: by click this [link](https://myaccount.google.com/security)
 
 
 	
