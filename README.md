@@ -46,11 +46,11 @@
 ## Technology Stack Used:
 
 		     FrameWork -> Spring MVC 
-      		Front-End -> JSP,JSTL,HTML,CSS,JavaScript(JQuery,AJAX).
-      		Back-End  -> Java (Programming Language)
-      		DataBase  -> MySql
+      		     Front-End -> JSP,JSTL,HTML,CSS,JavaScript(JQuery,AJAX).
+      		     Back-End  -> Java (Programming Language)
+      		     DataBase  -> MySql
 		     Automatic-Functionalites -> QuartsScheduler
-               Project-Management-Tool -> Maven
+                     Project-Management-Tool -> Maven
 
 
 		
@@ -79,11 +79,11 @@
 
 ## To make Database-Tables DataBase Comments :
 
-	 1.) create Database :
+	  1.) create Database :
           
             create database project;
             
-         2.) create Tables :
+          2.) create Tables :
 
 		2.1) create admin table :
 		
@@ -128,7 +128,7 @@
 	- For mail we have JavaMail API in this application you no need to import any jar file,
 		because I create this app using Maven so it hande package for us
 
-	- For Automatic Fucntionality Quartz Scheduler is used crons as a input argument 
+	- For Automatic Fucntionality Quartz Scheduler is used, here crons as a input argument 
 	
 [For more about crons](https://www.freeformatter.com/cron-expression-generator-quartz.html)
 
