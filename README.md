@@ -87,7 +87,7 @@
 
 		2.1) create admin table :
 		
-			create table admin(name varchar(),pass varchar(10));
+			create table admin(name varchar(10),pass varchar(10));
 
 		2.2) create user tabel :
 
@@ -103,7 +103,7 @@
 
 		2.5) create date table :
 
-			create table date(day int, state varchar(10))
+			create table date(day int, state varchar(10));
                
    In proerties file I used to store DataBase deatils
 
